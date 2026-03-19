@@ -47,8 +47,7 @@ Presentamos a los miembros de "Los Compiladores". *Haz clic en las imágenes par
 A continuación, la organización de las actividades entregadas:
 
 * **`/Actividad1_Introduccion`**: Primeros pasos y estructuras básicas.
-* **`/Actividad2_TDA`**: Implementación de Tipos de Datos Abstractos.
-* **`/ProyectoFinal`**: Trabajo integrador de la materia.
+
 
 ## 🛠️ Tecnologías Utilizadas
 
