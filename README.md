@@ -28,7 +28,7 @@ Presentamos a los miembros de "Los Compiladores". *Haz clic en las imágenes par
 | [<img src="image_1.png" alt="Adrian Maldonado" width="150px">](https://github.com/TU_USUARIO_GITHUB) | [<img src="image_2.png" alt="Santiago Coco" width="150px">](https://github.com/TU_USUARIO_GITHUB) | [<img src="image_3.png" alt="Lucas Felice" width="150px">](https://github.com/TU_USUARIO_GITHUB) |
 | :---: | :---: | :---: |
 | **Adrian Maldonado** | **Santiago Coco** | **Lucas Felice** |
-| [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white">](https://github.com/TU_USUARIO_GITHUB) | [<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/ff115912-f22f-4843-b7ff-fb5b39aac80c" />|
+|[<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white">](https://github.com/TU_USUARIO_GITHUB) | [<img width="120" height="160" alt="image" src="https://github.com/user-attachments/assets/ff115912-f22f-4843-b7ff-fb5b39aac80c" />|
 
 <br>
 
