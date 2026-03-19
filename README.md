@@ -13,7 +13,7 @@
 
 # 🚀 Proyecto de Programación 2
 
-Este repositorio contiene las actividades, laboratorios y proyectos desarrollados por el grupo **"Los Compiladores"** para la materia Programación 2 de la Universidad Argentina de la Empresa (UADE).
+Este repositorio contiene las actividades y proyectos desarrollados por el grupo **"Los Compiladores"** para la materia Programación 2 de la Universidad Argentina de la Empresa (UADE).
 
 </div>
 
@@ -55,13 +55,10 @@ A continuación, la organización de las actividades entregadas:
 <div align="left">
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![Eclipse](https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 </div>
 
 ***
 <div align="center">
-Desarrollado con ❤️ para UADE - 2023/2024
+Desarrollado por los compiladores - 2026
 </div>
