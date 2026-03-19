@@ -29,7 +29,7 @@ Presentamos a los miembros de "Los Compiladores". *Haz clic en las imágenes par
 | :---: | :---: | :---: |
 | **Adrian Maldonado** | **Santiago Coco** | **Lucas Felice** |
 | Legajo: 1220625 | Legajo: 1220810 | Legajo: 1141923 |
-|[<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white">](https://github.com/TU_USUARIO_GITHUB) | [<img width="120" height="160" alt="image" src="https://github.com/user-attachments/assets/ff115912-f22f-4843-b7ff-fb5b39aac80c" />|
+| [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white">](https://github.com/TU_USUARIO_GITHUB) |
 
 <br>
 
@@ -37,7 +37,7 @@ Presentamos a los miembros de "Los Compiladores". *Haz clic en las imágenes par
 | :---: | :---: | :---: |
 | **Fadi Abdala** | **Tomas Lerman** | **Theo Lambert** |
 | Legajo: 1222122 | Legajo: 1215616 | Legajo: 1156352 |
-[<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) 
+| [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) |
 
 </div>
 
