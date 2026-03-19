@@ -3,7 +3,7 @@
 # - Adrian Maldonado
 # - Santiago Coco
 # - Lucas Felice
-# - Fadi Abdale
-# - Tomas Lermnan
+# - Fadi Abdala
+# - Tomas Lerman
 # - Thep Lambert
 
