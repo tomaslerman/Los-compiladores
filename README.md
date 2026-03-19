@@ -25,7 +25,7 @@ Presentamos a los miembros de "Los Compiladores". *Haz clic en las imágenes par
 
 <div align="center">
 
-| [<img src="ADRIAN.jpeg" alt="Adrian Maldonado" width="150px">](https://github.com/TU_USUARIO_GITHUB) | [<img src="image_2.png" alt="Santiago Coco" width="150px">](https://github.com/TU_USUARIO_GITHUB) | [<img src="image_3.png" alt="Lucas Felice" width="150px">](https://github.com/TU_USUARIO_GITHUB) |
+| [<img src="fotoscaras/adrian.jpeg" alt="Adrian Maldonado" width="150px">](https://github.com/TU_USUARIO_GITHUB) | [<img src="fotoscaras/santiago.jpeg" alt="Santiago Coco" width="150px">](https://github.com/TU_USUARIO_GITHUB) | [<img src="fotoscaras/lucas.jpeg" alt="Lucas Felice" width="150px">](https://github.com/TU_USUARIO_GITHUB) |
 | :---: | :---: | :---: |
 | **Adrian Maldonado** | **Santiago Coco** | **Lucas Felice** |
 | Legajo: 1220625 | Legajo: 1220810 | Legajo: 1141923 |
@@ -33,11 +33,11 @@ Presentamos a los miembros de "Los Compiladores". *Haz clic en las imágenes par
 
 <br>
 
-| [<img src="image_4.png" alt="Fadi Abdala" width="150px">](https://github.com/TU_USUARIO_GITHUB) | [<img src="image_5.png" alt="Tomas Lerman" width="150px">](https://github.com/TU_USUARIO_GITHUB) | [<img src="image_6.png" alt="Theo Lambert" width="150px">](https://github.com/TU_USUARIO_GITHUB) |
+| [<img src="fotoscaras/fadi.jpeg" alt="Fadi Abdala" width="150px">](https://github.com/TU_USUARIO_GITHUB) | [<img src="fotoscaras/tomas.jpeg" alt="Tomas Lerman" width="150px">](https://github.com/TU_USUARIO_GITHUB) | [<img src="fotoscaras/theo.jpeg" alt="Theo Lambert" width="150px">](https://github.com/TU_USUARIO_GITHUB) |
 | :---: | :---: | :---: |
 | **Fadi Abdala** | **Tomas Lerman** | **Theo Lambert** |
 | Legajo: 1222122 | Legajo: 1215616 | Legajo: 1156352 |
-| | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) | |
+[<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) 
 
 </div>
 
