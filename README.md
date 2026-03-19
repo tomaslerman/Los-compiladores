@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="image_0.png" alt="Los Compiladores Banner" width="100%">
+<img width="2752" height="1536" alt="banner_los_compiladores" src="https://github.com/user-attachments/assets/410e24a7-3bee-49d5-a3bf-860e6ef6851f" />
 
 <br>
 
