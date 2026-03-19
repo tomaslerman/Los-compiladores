@@ -35,7 +35,7 @@ Presentamos a los miembros de "Los Compiladores". *Haz clic en las imágenes par
 | [<img src="image_4.png" alt="Fadi Abdala" width="150px">](https://github.com/TU_USUARIO_GITHUB) | [<img src="image_5.png" alt="Tomas Lerman" width="150px">](https://github.com/TU_USUARIO_GITHUB) | [<img src="image_6.png" alt="Theo Lambert" width="150px">](https://github.com/TU_USUARIO_GITHUB) |
 | :---: | :---: | :---: |
 | **Fadi Abdala** | **Tomas Lerman** | **Theo Lambert** |
-| [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white">](https://github.com/TU_USUARIO_GITHUB) |
+| | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) | [<img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" width="110">](https://github.com/TU_USUARIO_GITHUB) | |
 
 </div>
 
