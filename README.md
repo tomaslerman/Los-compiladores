@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="2752" height="1536" alt="banner_los_compiladores" src="https://github.com/user-attachments/assets/410e24a7-3bee-49d5-a3bf-860e6ef6851f" />
+<img width="755" height="210" alt="image" src="https://github.com/user-attachments/assets/5fffae40-7e86-4663-8753-b4bf2fe5ddab" />
 
 <br>
 
