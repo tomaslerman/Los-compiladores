@@ -5,5 +5,5 @@
 - Lucas Felice
 - Fadi Abdala
 - Tomas Lerman
-- Thep Lambert
+- Theo Lambert
 
