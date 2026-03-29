@@ -62,14 +62,14 @@ public class Main {
     }
 
     //Metodo para verificar los parentesis
-    public static boolean EstaBalanceado(String s) {
+    public static boolean EstaBalanceado(String linea) {
         PilaTDA pila = new Pila();
         pila.InicializarPila();
-        for (char c : s.toCharArray()) {
-            if (c == '(') {
-                pila.Apilar(c); //Se apila al abrir un parentesis
+        for (char caracter : linea.toCharArray()) {
+            if (caracter == '(') {
+                pila.Apilar(caracter); //Se apila al abrir un parentesis
             }
-            else if (c == ')') {
+            else if (caracter == ')') {
                 if (pila.PilaVacia()) {
                     return false;  // Esto significa que los parentesis no están balanceados
                 } else {
