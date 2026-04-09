@@ -4,10 +4,44 @@ import Interfaces.ColaTDA;
 import implementacion.Cola;
 import Interfaces.ColaPrioridadTDA;
 import implementacion.ColaPrioridad;
+import Interfaces.ConjuntoTDA;
+import implementacion.Conjunto;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int opcion = 0;
+
+        while (opcion != 3) {
+            System.out.println("\nBienvenido, seleccione la opción deseada:");
+            System.out.println("1. Parte uno, Pilas y Colas");
+            System.out.println("2. Parte dos, Conjuntos");
+            System.out.println("3. Salir");
+            System.out.print("Opción: ");
+
+            opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    parte1();
+                    break;
+                case 2:
+                    parte2();
+                    break;
+                case 3:
+                    System.out.println("Hasta luego!");
+                    break;
+                default:
+                    System.out.println("Opción inválida, intente de nuevo.");
+            }
+        }
+
+        scanner.close();
+    }
+
+    public static void parte1() {
 
         // =========================
         // 1) Historial de páginas
@@ -235,6 +269,47 @@ public class Main {
         soporte.AcolarPrioridad(2, 999);
 
         System.out.println("Ticket prioritario: " + soporte.Primero() + ", con prioridad " + soporte.Prioridad());
+    }
+
+    public static void parte2() {
+        // =========================
+        // 1) Padron electoral
+        // =========================
+        System.out.println("Ejercicio 1:");
+
+        Conjunto Padron = new Conjunto();
+        Padron.InicializarConjunto();
+        int[] votantes = {1,2,3,4,4,5,6};
+
+        for (int i = 0; i < votantes.length; i++) {
+            if (!Padron.Pertenece(votantes[i])) {
+                Padron.Agregar(votantes[i]);
+                System.out.print("\nVotó el votante " + votantes[i]);
+            }
+            else {
+                System.out.print("\nNo se permitió que el votante " + votantes[i] + " Vote otra vez");
+            }
+        }
+
+        System.out.println();
+
+        // =========================
+        // 2) Fiesta
+        // =========================
+        System.out.println("Ejercicio 2:");
+        Conjunto Lista = new Conjunto();
+        Lista.InicializarConjunto();
+        int[] invitados = {1,2,2,3,4,5,6,7,8,9,9,10};
+        for (int invitado : invitados) {
+            Lista.Agregar(invitado);
+        }
+        System.out.println("Se intentó agregar " + invitados.length + " invitados");
+        System.out.println("Cantidad de invitados en la lista: " + Lista.Tamanio());
+
+        // =========================
+        // 3) Filtro de Spam
+        // =========================
+        
     }
 
     public static boolean EstaBalanceado(String linea) {

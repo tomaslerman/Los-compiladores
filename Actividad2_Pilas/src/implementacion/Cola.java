@@ -18,11 +18,11 @@ public class Cola implements ColaTDA {
 
     public void Acolar(int x) {
         arr[ultimo] = x;
-        ultimo++;
+        ultimo = (ultimo + 1) % MAX;
     }
 
     public void Desacolar() {
-        primero++;
+        primero = (primero + 1) % MAX;
     }
 
     public int Primero() {
