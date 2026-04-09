@@ -26,7 +26,7 @@ public class Conjunto implements ConjuntoTDA {
     }
 
     @Override
-    public void Eliminar(int x) {
+    public void Sacar(int x) {
         int i = 0;
         while (i < cantidad && datos[i] != x) {
             i++;
@@ -54,5 +54,10 @@ public class Conjunto implements ConjuntoTDA {
     @Override
     public boolean ConjuntoVacio() {
         return cantidad == 0;
+    }
+
+    @Override
+    public int Elegir() {
+        return datos[0];
     }
 }

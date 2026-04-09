@@ -281,13 +281,12 @@ public class Main {
         Padron.InicializarConjunto();
         int[] votantes = {1,2,3,4,4,5,6};
 
-        for (int i = 0; i < votantes.length; i++) {
-            if (!Padron.Pertenece(votantes[i])) {
-                Padron.Agregar(votantes[i]);
-                System.out.print("\nVotó el votante " + votantes[i]);
-            }
-            else {
-                System.out.print("\nNo se permitió que el votante " + votantes[i] + " Vote otra vez");
+        for (int votante : votantes) {
+            if (!Padron.Pertenece(votante)) {
+                Padron.Agregar(votante);
+                System.out.print("\nVotó el votante " + votante);
+            } else {
+                System.out.print("\nNo se permitió que el votante " + votante + " Vote otra vez");
             }
         }
 
@@ -309,7 +308,85 @@ public class Main {
         // =========================
         // 3) Filtro de Spam
         // =========================
-        
+        System.out.println("\nEjercicio 3:");
+
+        // IDs: 1="Crypto", 2="Ganá", 3="Premio", 4="Hola", 5="amigo", 6="ganaste"
+        String[] diccionario = {"", "Crypto", "Ganá", "Premio", "Hola", "amigo", "ganaste"};
+
+        Conjunto blacklist = new Conjunto();
+        blacklist.InicializarConjunto();
+        blacklist.Agregar(1); // "Crypto"
+        blacklist.Agregar(2); // "Ganá"
+        blacklist.Agregar(3); // "Premio"
+
+        // Mail entrante: "Hola amigo ganaste un Premio"
+        int[] mailEntrante = {4, 5, 6, 3};
+        System.out.print("Mail entrante: ");
+        for (int id : mailEntrante) System.out.print(diccionario[id] + " ");
+        System.out.println();
+
+        boolean esSpam = false;
+        for (int id : mailEntrante) {
+            if (blacklist.Pertenece(id)) {
+                System.out.println("Palabra prohibida detectada: \"" + diccionario[id] + "\"");
+                esSpam = true;
+            }
+        }
+        System.out.println("¿Es spam? " + (esSpam ? "Sí" : "No"));
+
+        // =========================
+        // 4) Tags de Blog
+        // =========================
+        System.out.println("\nEjercicio 4:");
+
+        Conjunto tagsPost = new Conjunto();
+        tagsPost.InicializarConjunto();
+        tagsPost.Agregar(1); // #Programacion
+        tagsPost.Agregar(2); // #Java
+        tagsPost.Agregar(3); // #OOP
+        tagsPost.Agregar(2); // intento duplicar #Java
+
+        System.out.println("Se intentaron agregar 4 tags (con #Java duplicado)");
+        System.out.println("Tags únicos almacenados: " + tagsPost.Tamanio());
+        System.out.println("¿Contiene #Java? " + tagsPost.Pertenece(2));
+        System.out.println("Razón: el Conjunto garantiza unicidad.");
+        System.out.println("Una Pila permitiría apilar #Java dos veces sin control.");
+
+        // =========================
+        // 5) Gestión de Legajos
+        // =========================
+        System.out.println("\nEjercicio 5:");
+
+        Conjunto legajos = new Conjunto();
+        legajos.InicializarConjunto();
+
+        int legajo = 12345;
+        legajos.Agregar(legajo);
+        System.out.println("Alumno " + legajo + " inscripto en Informática. Legajos en BD: " + legajos.Tamanio());
+
+        legajos.Agregar(legajo); // intenta inscribirse en Sistemas con el mismo ID
+        System.out.println("Alumno " + legajo + " intenta inscribirse en Sistemas. Legajos en BD: " + legajos.Tamanio());
+        System.out.println("El Conjunto rechazó el duplicado: el legajo " + legajo + " ya existía.");
+
+        // =========================
+        // 6) Elegir vs Sacar
+        // =========================
+        System.out.println("\nEjercicio 6:");
+
+        Conjunto conjElegir = new Conjunto();
+        conjElegir.InicializarConjunto();
+        conjElegir.Agregar(10);
+        conjElegir.Agregar(20);
+        conjElegir.Agregar(30);
+
+        int primera = conjElegir.Elegir();
+        int segunda = conjElegir.Elegir();
+
+        System.out.println("Primera llamada a Elegir(): " + primera);
+        System.out.println("Segunda llamada a Elegir() sin Sacar(): " + segunda);
+        System.out.println("¿Son iguales? " + (primera == segunda));
+        System.out.println("Elegir() devuelve un elemento arbitrario, NO aleatorio.");
+        System.out.println("Sin llamar a Sacar(), la implementación devuelve siempre el mismo elemento.");
     }
 
     public static boolean EstaBalanceado(String linea) {
