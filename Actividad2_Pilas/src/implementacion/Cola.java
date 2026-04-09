@@ -8,8 +8,10 @@ public class Cola implements ColaTDA {
     int primero;
     int ultimo;
 
+    public static final int MAX = 100;
+
     public void InicializarCola() {
-        arr = new int[100];
+        arr = new int[MAX];
         primero = 0;
         ultimo = 0;
     }

@@ -51,10 +51,10 @@ public class Main {
         System.out.println("\nEjercicio 3:");
 
         String ejemplo = "((a+b)*c)";
-        System.out.println("Expresión 1: " + (EstaBalanceado(ejemplo) ? "Correcta" : "Incorrecta"));
+        System.out.println(ejemplo + ": " + (EstaBalanceado(ejemplo) ? "Balanceado" : "No balanceado"));
 
         String ejemplo2 = "((a+b+c)*d";
-        System.out.println("Expresión 2: " + (EstaBalanceado(ejemplo2) ? "Correcta" : "Incorrecta"));
+        System.out.println(ejemplo2 + ": " +(EstaBalanceado(ejemplo2) ? "Balanceado" : "No balanceado"));
 
         // =========================
         // 4) Reversión de String
@@ -66,12 +66,12 @@ public class Main {
         pilaString.InicializarPila();
 
         for (int i = 0; i < palabra.length(); i++) {
-            pilaString.Apilar((int) palabra.charAt(i));
+            pilaString.Apilar(palabra.charAt(i));
         }
 
         System.out.print("Invertida: ");
         while (!pilaString.PilaVacia()) {
-            System.out.print((char) pilaString.Tope());
+            System.out.print((char)pilaString.Tope());
             pilaString.Desapilar();
         }
         System.out.println();
@@ -88,7 +88,8 @@ public class Main {
         callStack.Apilar(2); // Calcular
         callStack.Apilar(3); // Sumar
 
-        System.out.println("Función en ejecución: " + callStack.Tope());
+        String[] resultado = {"Main", "Calcular", "Suma"};
+        System.out.println("Función en el tope: " + resultado[callStack.Tope()-1]);
 
         // =========================
         // 6) Directorios
@@ -102,27 +103,31 @@ public class Main {
         directorios.Apilar(2);
         directorios.Apilar(3);
 
-        System.out.println("Actual: " + directorios.Tope());
+        String[] resulta2 = {"/home", "/home/user", "/home/user/documents"};
+        System.out.println("Actual: " + resulta2[directorios.Tope()-1]);
         directorios.Desapilar();
-        System.out.println("Después de subir: " + directorios.Tope());
+        System.out.println("Después de subir: " + resulta2[directorios.Tope()-1]);
 
         // =========================
-        // 7) Cajero (Cola)
+        // 7) Cajero (Cola comun)
         // =========================
         System.out.println("\nEjercicio 7:");
 
         ColaTDA cajero = new Cola();
         cajero.InicializarCola();
 
+        System.out.println("Entran Juanito, Pepito y Gonzalito, en ese orden");
         cajero.Acolar(1);
         cajero.Acolar(2);
         cajero.Acolar(3);
 
-        System.out.println("Primero: " + cajero.Primero());
+        String[] resultado3 = {"Juanito", "Pepito", "Gonzalito"};
+
+        System.out.println("Primero: " + resultado3[cajero.Primero()-1]);
 
         cajero.Desacolar();
 
-        System.out.println("Después: " + cajero.Primero());
+        System.out.println("Siguiente: " + resultado3[cajero.Primero()-1]);
 
         // =========================
         // 8) Impresora
@@ -132,12 +137,15 @@ public class Main {
         ColaTDA impresora = new Cola();
         impresora.InicializarCola();
 
-        impresora.Acolar(10);
-        impresora.Acolar(20);
-        impresora.Acolar(30);
+        //Se imprimen los documentos en orden de llegada (aunque hayan llegado "al mismo tiempo")
+        impresora.Acolar(1);
+        impresora.Acolar(2);
+        impresora.Acolar(3);
+        impresora.Acolar(4);
+        impresora.Acolar(5);
 
         while (!impresora.ColaVacia()) {
-            System.out.println("Imprimiendo: " + impresora.Primero());
+            System.out.println("Imprimiendo documento: " + impresora.Primero());
             impresora.Desacolar();
         }
 
@@ -149,11 +157,11 @@ public class Main {
         ColaPrioridadTDA hospital = new ColaPrioridad();
         hospital.InicializarCola();
 
-        hospital.AcolarPrioridad(1, 1);
-        hospital.AcolarPrioridad(2, 100);
-        hospital.AcolarPrioridad(3, 50);
+        hospital.AcolarPrioridad(1, 1); //nene
+        hospital.AcolarPrioridad(2, 100); //jubilado
+        String[] resultado4 = {"nene", "jubilado"};
 
-        System.out.println("Paciente atendido: " + hospital.Primero());
+        System.out.println("Paciente atendido: " + resultado4[hospital.Primero()-1]);
 
         // =========================
         // 10) Examen
@@ -163,10 +171,11 @@ public class Main {
         ColaPrioridadTDA examen = new ColaPrioridad();
         examen.InicializarCola();
 
-        examen.AcolarPrioridad(1, 5);
-        examen.AcolarPrioridad(2, 10);
+        examen.AcolarPrioridad(1, 5); //regular
+        examen.AcolarPrioridad(2, 10); //promocionante
+        String[] resultado5 = {"regular", "promocionante"};
 
-        System.out.println("Pasa primero: " + examen.Primero());
+        System.out.println("Pasa primero: " + resultado5[examen.Primero()-1]);
 
         // =========================
         // 11) Buffet
@@ -176,23 +185,24 @@ public class Main {
         ColaTDA buffet = new Cola();
         buffet.InicializarCola();
 
-        buffet.Acolar(1);
-        buffet.Acolar(2);
-
-        System.out.println("Se atiende: " + buffet.Primero());
+        buffet.Acolar(1); //Estudiante 1
+        buffet.Acolar(2); //Estudiante 2
+        String[] resultado6 = {"Estudiante 1", "Estudiante 2"};
+        System.out.println("Se atiende primero: " + resultado6[buffet.Primero()-1]);
 
         // =========================
-        // 12) CPU
+        // 12) Procesador de tareas
         // =========================
         System.out.println("\nEjercicio 12:");
 
         ColaPrioridadTDA cpu = new ColaPrioridad();
         cpu.InicializarCola();
 
-        cpu.AcolarPrioridad(1, 10);
-        cpu.AcolarPrioridad(2, 50);
+        cpu.AcolarPrioridad(1, 10); //Spotify
+        cpu.AcolarPrioridad(2, 50); //Proceso del sistema
 
-        System.out.println("Proceso ejecutado: " + cpu.Primero());
+        String[] resultado7 = {"Spotify", "Proceso del sistema"};
+        System.out.println("Proceso ejecutado: " + resultado7[cpu.Primero()-1]);
 
         // =========================
         // 13) Aerolínea
@@ -202,11 +212,16 @@ public class Main {
         ColaPrioridadTDA vuelo = new ColaPrioridad();
         vuelo.InicializarCola();
 
-        vuelo.AcolarPrioridad(1, 1);
-        vuelo.AcolarPrioridad(2, 3);
-        vuelo.AcolarPrioridad(3, 2);
+        vuelo.AcolarPrioridad(1, 3); //Movilidad reducida
+        vuelo.AcolarPrioridad(2, 1); //Normal
+        vuelo.AcolarPrioridad(3, 2); //Business
+        vuelo.AcolarPrioridad(4,3); //Movilidad reducida
 
-        System.out.println("Sube primero: " + vuelo.Primero());
+        String[] resultado8 = {"Movilidad reducida", "Normal", "Business", "Movilidad reducida"};
+        for (int i = 1; i <= 4; i++) {
+            System.out.println("Sube el pasajero " + vuelo.Primero() + ": " + resultado8[vuelo.Primero()-1]);
+            vuelo.Desacolar();
+        }
 
         // =========================
         // 14) Soporte IT
@@ -219,7 +234,7 @@ public class Main {
         soporte.AcolarPrioridad(1, 0);
         soporte.AcolarPrioridad(2, 999);
 
-        System.out.println("Ticket prioritario: " + soporte.Primero());
+        System.out.println("Ticket prioritario: " + soporte.Primero() + ", con prioridad " + soporte.Prioridad());
     }
 
     public static boolean EstaBalanceado(String linea) {
@@ -228,7 +243,7 @@ public class Main {
 
         for (char c : linea.toCharArray()) {
             if (c == '(') {
-                pila.Apilar(1);
+                pila.Apilar(c);
             } else if (c == ')') {
                 if (pila.PilaVacia()) return false;
                 pila.Desapilar();
