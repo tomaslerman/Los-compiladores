@@ -68,8 +68,5 @@ public class ColaPrioridad implements ColaPrioridadTDA {
         cantidad--;
     }
 
-    public boolean ColaVacia() {
-        return (cantidad == 0);
-    }
 }
 

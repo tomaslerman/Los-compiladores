@@ -11,6 +11,4 @@ public interface ColaPrioridadTDA {
     int Primero();
 
     int Prioridad();
-
-    boolean ColaVacia();
 }
