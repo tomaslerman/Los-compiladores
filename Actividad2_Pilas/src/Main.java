@@ -278,7 +278,6 @@ public class Main {
         System.out.println("Ejercicio 1:");
 
         Conjunto Padron = new Conjunto();
-        Padron.InicializarConjunto();
         int[] votantes = {1,2,3,4,4,5,6};
 
         for (int votante : votantes) {
@@ -297,7 +296,6 @@ public class Main {
         // =========================
         System.out.println("Ejercicio 2:");
         Conjunto Lista = new Conjunto();
-        Lista.InicializarConjunto();
         int[] invitados = {1,2,2,3,4,5,6,7,8,9,9,10};
         for (int invitado : invitados) {
             Lista.Agregar(invitado);
@@ -314,7 +312,6 @@ public class Main {
         String[] diccionario = {"", "Crypto", "Ganá", "Premio", "Hola", "amigo", "ganaste"};
 
         Conjunto blacklist = new Conjunto();
-        blacklist.InicializarConjunto();
         blacklist.Agregar(1); // "Crypto"
         blacklist.Agregar(2); // "Ganá"
         blacklist.Agregar(3); // "Premio"
@@ -340,7 +337,6 @@ public class Main {
         System.out.println("\nEjercicio 4:");
 
         Conjunto tagsPost = new Conjunto();
-        tagsPost.InicializarConjunto();
         tagsPost.Agregar(1); // #Programacion
         tagsPost.Agregar(2); // #Java
         tagsPost.Agregar(3); // #OOP
@@ -358,7 +354,6 @@ public class Main {
         System.out.println("\nEjercicio 5:");
 
         Conjunto legajos = new Conjunto();
-        legajos.InicializarConjunto();
 
         int legajo = 12345;
         legajos.Agregar(legajo);
@@ -374,7 +369,6 @@ public class Main {
         System.out.println("\nEjercicio 6:");
 
         Conjunto conjElegir = new Conjunto();
-        conjElegir.InicializarConjunto();
         conjElegir.Agregar(10);
         conjElegir.Agregar(20);
         conjElegir.Agregar(30);
