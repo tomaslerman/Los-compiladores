@@ -4,13 +4,12 @@ import Interfaces.ColaTDA;
 import implementacion.Cola;
 import Interfaces.ColaPrioridadTDA;
 import implementacion.ColaPrioridad;
-import Interfaces.ConjuntoTDA;
 import implementacion.Conjunto;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int opcion = 0;
 
@@ -31,7 +30,7 @@ public class Main {
                     parte2();
                     break;
                 case 3:
-                    System.out.println("Hasta luego!");
+                    System.out.println("Chau!");
                     break;
                 default:
                     System.out.println("Opción inválida, intente de nuevo.");
@@ -309,23 +308,23 @@ public class Main {
         System.out.println("\nEjercicio 3:");
 
         // IDs: 1="Crypto", 2="Ganá", 3="Premio", 4="Hola", 5="amigo", 6="ganaste"
-        String[] diccionario = {"", "Crypto", "Ganá", "Premio", "Hola", "amigo", "ganaste"};
+        String[] palabrasClave = {"Crypto", "Ganá", "Premio", "Hola", "amigo", "ganaste"};
 
         Conjunto blacklist = new Conjunto();
-        blacklist.Agregar(1); // "Crypto"
-        blacklist.Agregar(2); // "Ganá"
-        blacklist.Agregar(3); // "Premio"
+        blacklist.Agregar(0); // "Crypto"
+        blacklist.Agregar(1); // "Ganá"
+        blacklist.Agregar(2); // "Premio"
 
         // Mail entrante: "Hola amigo ganaste un Premio"
-        int[] mailEntrante = {4, 5, 6, 3};
+        int[] mailEntrante = {3, 4, 5, 2};
         System.out.print("Mail entrante: ");
-        for (int id : mailEntrante) System.out.print(diccionario[id] + " ");
+        for (int id : mailEntrante) System.out.print(palabrasClave[id] + " ");
         System.out.println();
 
         boolean esSpam = false;
         for (int id : mailEntrante) {
             if (blacklist.Pertenece(id)) {
-                System.out.println("Palabra prohibida detectada: \"" + diccionario[id] + "\"");
+                System.out.println("Palabra prohibida detectada: \"" + palabrasClave[id] + "\"");
                 esSpam = true;
             }
         }
@@ -337,16 +336,16 @@ public class Main {
         System.out.println("\nEjercicio 4:");
 
         Conjunto tagsPost = new Conjunto();
-        tagsPost.Agregar(1); // #Programacion
-        tagsPost.Agregar(2); // #Java
-        tagsPost.Agregar(3); // #OOP
-        tagsPost.Agregar(2); // intento duplicar #Java
+        tagsPost.Agregar(0); // #Programacion
+        tagsPost.Agregar(1); // #Java
+        tagsPost.Agregar(2); // #OOP
+        tagsPost.Agregar(1); // se intenta duplicar #Java
 
         System.out.println("Se intentaron agregar 4 tags (con #Java duplicado)");
         System.out.println("Tags únicos almacenados: " + tagsPost.Tamanio());
-        System.out.println("¿Contiene #Java? " + tagsPost.Pertenece(2));
-        System.out.println("Razón: el Conjunto garantiza unicidad.");
-        System.out.println("Una Pila permitiría apilar #Java dos veces sin control.");
+        System.out.println("¿Contiene #Java? " + tagsPost.Pertenece(1));
+        System.out.println("Se usan conjuntos porque garantizan la unicidad de los elementos.");
+        System.out.println("Una pila permitiría apilar #Java dos veces sin control.");
 
         // =========================
         // 5) Gestión de Legajos
@@ -359,28 +358,28 @@ public class Main {
         legajos.Agregar(legajo);
         System.out.println("Alumno " + legajo + " inscripto en Informática. Legajos en BD: " + legajos.Tamanio());
 
-        legajos.Agregar(legajo); // intenta inscribirse en Sistemas con el mismo ID
+        legajos.Agregar(legajo); // se intenta inscribirse en Sistemas con el mismo ID
         System.out.println("Alumno " + legajo + " intenta inscribirse en Sistemas. Legajos en BD: " + legajos.Tamanio());
-        System.out.println("El Conjunto rechazó el duplicado: el legajo " + legajo + " ya existía.");
+        System.out.println("El alumno se inscribe en Sistemas con el legajo " + legajo + " porque ya existía, y se ignora el duplicado.");
 
         // =========================
         // 6) Elegir vs Sacar
         // =========================
         System.out.println("\nEjercicio 6:");
 
-        Conjunto conjElegir = new Conjunto();
-        conjElegir.Agregar(10);
-        conjElegir.Agregar(20);
-        conjElegir.Agregar(30);
+        Conjunto conjEjemplo = new Conjunto();
+        conjEjemplo.Agregar(10);
+        conjEjemplo.Agregar(20);
+        conjEjemplo.Agregar(30);
 
-        int primera = conjElegir.Elegir();
-        int segunda = conjElegir.Elegir();
+        int primera = conjEjemplo.Elegir();
+        int segunda = conjEjemplo.Elegir();
 
         System.out.println("Primera llamada a Elegir(): " + primera);
         System.out.println("Segunda llamada a Elegir() sin Sacar(): " + segunda);
         System.out.println("¿Son iguales? " + (primera == segunda));
         System.out.println("Elegir() devuelve un elemento arbitrario, NO aleatorio.");
-        System.out.println("Sin llamar a Sacar(), la implementación devuelve siempre el mismo elemento.");
+        System.out.println("En nuestra implementación, Elegir() siempre devuelve el mismo elemento (el primero en el array) si no se llama a Sacar().");
     }
 
     public static boolean EstaBalanceado(String linea) {
