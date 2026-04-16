@@ -2,8 +2,6 @@ import Interfaces.PilaTDA;
 import implementacion.*;
 import Interfaces.ColaTDA;
 import Interfaces.ColaPrioridadTDA;
-
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
