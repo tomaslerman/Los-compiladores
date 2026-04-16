@@ -1,8 +1,11 @@
 package Interfaces;
 
 public interface DiccionarioSimpleTDA {
-    void Agregar(int clave, int valor);
-    void Eliminar(int clave);
-    int Recuperar(int clave);
-    ConjuntoTDA Claves();
+    void Agregar(String clave, String valor);
+
+    void Eliminar(String clave);
+
+    String Recuperar(String clave);
+
+    String[] Claves();
 }

@@ -1,10 +1,9 @@
 import Interfaces.PilaTDA;
-import implementacion.Pila;
+import implementacion.*;
 import Interfaces.ColaTDA;
-import implementacion.Cola;
 import Interfaces.ColaPrioridadTDA;
-import implementacion.ColaPrioridad;
-import implementacion.Conjunto;
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -380,6 +379,42 @@ public class Main {
         System.out.println("¿Son iguales? " + (primera == segunda));
         System.out.println("Elegir() devuelve un elemento arbitrario, NO aleatorio.");
         System.out.println("En nuestra implementación, Elegir() siempre devuelve el mismo elemento (el primero en el array) si no se llama a Sacar().");
+
+        // =========================
+        // 7) Agenda de contactos
+        // =========================
+
+        DiccionarioSimple agenda = new DiccionarioSimple();
+
+        String[] nombres = {"Juan", "María", "Pedro", "Ana", "Luis", "Laura", "Carlos", "Sofía", "Diego", "Elena"};
+        int[] telefonos = {123456789, 987654321, 555555555, 111111111, 222222222, 333333333, 444444444, 666666666, 777777777, 888888888};
+
+        for (int i = 0; i < nombres.length; i++) {
+            agenda.Agregar(nombres[i], Integer.toString(telefonos[i]));
+        }
+
+        System.out.println("\nAgenda de contactos:");
+        for (String nombre : nombres) {
+            System.out.println(nombre + ": " + agenda.Recuperar(nombre));
+        }
+
+        // =========================
+        // 8) Diccionario de sinonimos
+        // =========================
+
+        String[] palabras = {"romper", "arreglar", "caminar", "hablar"};
+        String[][] sinonimos = {
+                {"descomponer", "quebrar", "partir"},
+                {"reparar", "solucionar", "corregir"},
+                {"andar", "desplazarse", "marchar"},
+                {"charlar", "conversar", "decir"},
+        };
+
+        System.out.println("Sinonimos:");
+        for (int i = 0; i < palabras.length; i++) {
+            System.out.println(palabras[i] + ": " + Arrays.toString(sinonimos[i]));
+        }
+
     }
 
     public static boolean EstaBalanceado(String linea) {
