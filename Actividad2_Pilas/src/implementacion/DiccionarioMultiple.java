@@ -1,67 +1,87 @@
 package implementacion;
 
-import Interfaces.ConjuntoTDA;
 import Interfaces.DiccionarioMultipleTDA;
+import java.util.Objects;
 
 public class DiccionarioMultiple implements DiccionarioMultipleTDA {
 
-    private static final int MAX = 100;
-    private int[] claves;
-    private Conjunto[] valores; //Los valores se guardan en una lista de conjuntos
+    private static final int MAX_CLAVES = 100;
+    private static final int MAX_VALORES = 100;
+    private String[] claves;
+    private String[][] valores;
+    private int[] cantValores;
     private int cantidad;
 
     public DiccionarioMultiple() {
-        claves = new int[MAX];
-        valores = new Conjunto[MAX];
+        claves = new String[MAX_CLAVES];
+        valores = new String[MAX_CLAVES][MAX_VALORES];
+        cantValores = new int[MAX_CLAVES];
         cantidad = 0;
     }
 
-    private int buscarIndice(int clave) {
+    private int buscarIndice(String clave) {
         for (int i = 0; i < cantidad; i++) {
-            if (claves[i] == clave) return i;
+            if (Objects.equals(claves[i], clave)) return i;
         }
         return -1;
     }
 
     @Override
-    public void Agregar(int clave, int valor) {
+    public void Agregar(String clave, String valor) {
         int i = buscarIndice(clave);
         if (i != -1) {
-            valores[i].Agregar(valor);
-        } else if (cantidad < MAX) {
+            // Verificar que el valor no esté duplicado
+            for (int j = 0; j < cantValores[i]; j++) {
+                if (Objects.equals(valores[i][j], valor)) return;
+            }
+            if (cantValores[i] < MAX_VALORES) {
+                valores[i][cantValores[i]] = valor;
+                cantValores[i]++;
+            }
+        } else if (cantidad < MAX_CLAVES) {
             claves[cantidad] = clave;
-            valores[cantidad] = new Conjunto();
-            valores[cantidad].Agregar(valor);
+            valores[cantidad][0] = valor;
+            cantValores[cantidad] = 1;
             cantidad++;
         }
     }
 
     @Override
-    public void EliminarValor(int clave, int valor) {
+    public void EliminarValor(String clave, String valor) {
         int i = buscarIndice(clave);
-        if (i != -1) {
-            valores[i].Sacar(valor);
-            if (valores[i].ConjuntoVacio()) { //Si ya no hay valores con esta clave, se elimina la clave tambien
-                claves[i] = claves[cantidad - 1];
-                valores[i] = valores[cantidad - 1];
-                cantidad--;
+        if (i == -1) return;
+        for (int j = 0; j < cantValores[i]; j++) {
+            if (Objects.equals(valores[i][j], valor)) {
+                valores[i][j] = valores[i][cantValores[i] - 1];
+                cantValores[i]--;
+                if (cantValores[i] == 0) {
+                    claves[i] = claves[cantidad - 1];
+                    valores[i] = valores[cantidad - 1];
+                    cantValores[i] = cantValores[cantidad - 1];
+                    cantidad--;
+                }
+                return;
             }
         }
     }
 
     @Override
-    public ConjuntoTDA Recuperar(int clave) {
+    public String[] Recuperar(String clave) {
         int i = buscarIndice(clave);
-        if (i == -1) return null; //Si no existe la clave, retorna null
-        return valores[i];
+        if (i == -1) return new String[0];
+        String[] resultado = new String[cantValores[i]];
+        for (int j = 0; j < cantValores[i]; j++) {
+            resultado[j] = valores[i][j];
+        }
+        return resultado;
     }
 
     @Override
-    public ConjuntoTDA Claves() {
-        Conjunto c = new Conjunto();
+    public String[] Claves() {
+        String[] resultado = new String[cantidad];
         for (int i = 0; i < cantidad; i++) {
-            c.Agregar(claves[i]);
+            resultado[i] = claves[i];
         }
-        return c;
+        return resultado;
     }
 }

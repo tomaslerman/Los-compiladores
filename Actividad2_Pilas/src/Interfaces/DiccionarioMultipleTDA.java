@@ -1,8 +1,8 @@
 package Interfaces;
 
 public interface DiccionarioMultipleTDA {
-    void Agregar(int clave, int valor);
-    void EliminarValor(int clave, int valor);
-    ConjuntoTDA Recuperar(int clave);
-    ConjuntoTDA Claves();
+    void Agregar(String clave, String valor);
+    void EliminarValor(String clave, String valor);
+    String[] Recuperar(String clave);
+    String[] Claves();
 }

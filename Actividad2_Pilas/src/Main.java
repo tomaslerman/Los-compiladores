@@ -383,6 +383,7 @@ public class Main {
         // =========================
         // 7) Agenda de contactos
         // =========================
+        System.out.println("\nEjercicio 7:");
 
         DiccionarioSimple agenda = new DiccionarioSimple();
 
@@ -401,6 +402,7 @@ public class Main {
         // =========================
         // 8) Diccionario de sinonimos
         // =========================
+        System.out.println("\nEjercicio 8:");
 
         String[] palabras = {"romper", "arreglar", "caminar", "hablar"};
         String[][] sinonimos = {
@@ -410,12 +412,101 @@ public class Main {
                 {"charlar", "conversar", "decir"},
         };
 
-        System.out.println("Sinonimos:");
+        DiccionarioMultiple dicSinonimos = new DiccionarioMultiple();
         for (int i = 0; i < palabras.length; i++) {
-            System.out.println(palabras[i] + ": " + Arrays.toString(sinonimos[i]));
+            for (String sinonimo : sinonimos[i]) {
+                dicSinonimos.Agregar(palabras[i], sinonimo);
+            }
         }
 
-    }
+        System.out.println("Sinonimos:");
+        for (String palabra : palabras) {
+            System.out.println(palabra + ": " + java.util.Arrays.toString(dicSinonimos.Recuperar(palabra)));
+        }
+
+        // =========================
+        // 9) Puntaje de torneo de E-Sports
+        // =========================
+        System.out.println("\nEjercicio 9:");
+
+        System.out.println("Modelado: Clave = [Nombre de usuario], Valor = [Puntaje máximo]");
+
+        DiccionarioSimple torneo = new DiccionarioSimple();
+        torneo.Agregar("NinjaX", "9500");
+        torneo.Agregar("ShadowByte", "8200");
+        torneo.Agregar("PixelKiller", "11000");
+
+        System.out.println("Puntaje de NinjaX: " + torneo.Recuperar("NinjaX"));
+        System.out.println("Puntaje de PixelKiller: " + torneo.Recuperar("PixelKiller"));
+
+        // =========================
+        // 10) Traductor de Idiomas
+        // "Bank" → "Banco" o "Orilla" (múltiples valores por clave)
+        // TDA: DiccionarioMultiple — una palabra puede tener varias traducciones
+        // =========================
+        System.out.println("\nEjercicio 10:");
+
+        System.out.println("TDA Usado: DiccionarioMultiple");
+        System.out.println("'Bank' tiene varias traducciones (Banco, Orilla).");
+        System.out.println("DiccionarioSimple solo guardaría una.");
+        System.out.println("Asi que se eligió DiccionarioMultiple para guardar las traducciones.");
+
+        DiccionarioMultiple traductor = new DiccionarioMultiple();
+        traductor.Agregar("Bank", "Banco");
+        traductor.Agregar("Bank", "Orilla");
+
+        System.out.println("Traducciones de 'Bank': " + java.util.Arrays.toString(traductor.Recuperar("Bank")));
+
+        // =========================
+        // 11) Índice de Libro de Algoritmos
+        // =========================
+        System.out.println("\nEjercicio 11 - Índice de Libro:");
+
+        DiccionarioMultiple indice = new DiccionarioMultiple();
+        indice.Agregar("Recursión", "12");
+        indice.Agregar("Recursión", "45");
+        indice.Agregar("Recursión", "88");
+
+        System.out.println("'Recursión' aparece en páginas: " + java.util.Arrays.toString(indice.Recuperar("Recursión")));
+
+        // =========================
+        // 12) Inscripción por Alumno
+        // =========================
+        System.out.println("\nEjercicio 12 - Inscripción por Alumno:");
+
+        DiccionarioMultiple inscripciones = new DiccionarioMultiple();
+        inscripciones.Agregar("12345", "Algoritmos");
+        inscripciones.Agregar("12345", "Matemática");
+        inscripciones.Agregar("12345", "Física");
+
+        System.out.println("Materias del legajo 12345: " + java.util.Arrays.toString(inscripciones.Recuperar("12345")));
+
+        // =========================
+        // 13) DNS (Domain Name System)
+        // =========================
+        System.out.println("\nEjercicio 13 - DNS:");
+
+        DiccionarioSimple dns = new DiccionarioSimple(); //Se usan diccionarios simples para asociar dominios a IPs únicas
+        dns.Agregar("google.com", "142.250.190.46");
+        dns.Agregar("github.com", "140.82.114.4");
+
+        System.out.println("google.com → " + dns.Recuperar("google.com"));
+        System.out.println("github.com → " + dns.Recuperar("github.com"));
+
+        // =========================
+        // 14) Chipotle Support Bot (Pepper)
+        // =========================
+        System.out.println("\nEjercicio 14 - Chipotle Support Bot (Pepper):");
+
+        DiccionarioSimple pepper = new DiccionarioSimple(); //Se usan diccionarios simples para asociar Orden IDs a scripts Python unicos
+        pepper.Agregar("ORD-001", "taco.py");
+        pepper.Agregar("ORD-002", "burrito.py");
+        pepper.Agregar("ORD-003", "aguacate.py");
+
+        System.out.println("Script para ORD-001: " + pepper.Recuperar("ORD-001"));
+        System.out.println("Script para ORD-002: " + pepper.Recuperar("ORD-002"));
+        System.out.println("Script para ORD-003: " + pepper.Recuperar("ORD-003"));
+        }
 
     public static boolean EstaBalanceado(String linea) {
         PilaTDA pila = new Pila();
