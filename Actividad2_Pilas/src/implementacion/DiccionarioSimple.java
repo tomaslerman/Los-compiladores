@@ -13,6 +13,10 @@ public class DiccionarioSimple implements DiccionarioSimpleTDA {
     private int cantidad;
 
     public DiccionarioSimple() {
+    }
+
+    @Override
+    public void InicializarDiccionario() {
         claves = new String[MAX];
         valores = new String[MAX];
         cantidad = 0;

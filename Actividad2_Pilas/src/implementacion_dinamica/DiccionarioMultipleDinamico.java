@@ -1,10 +1,9 @@
 package implementacion_dinamica;
 
-import Interface.DiccionarioMultipleTDA;
+import Interfaces.DiccionarioMultipleTDA;
 
 public class DiccionarioMultipleDinamico implements DiccionarioMultipleTDA {
 
-    // Lista enlazada de claves; cada clave apunta a su propia lista de valores.
     private NodeClave cabeza;
 
     @Override
@@ -13,15 +12,11 @@ public class DiccionarioMultipleDinamico implements DiccionarioMultipleTDA {
     }
 
     @Override
-    public void Agregar(int clave, int valor) {
+    public void Agregar(String clave, String valor) {
         NodeClave nodoClave = buscarClave(clave);
-
         if (nodoClave == null) {
-            // Clave nueva: crear nodo de clave con un primer valor.
-            NodeValor nodoValor = new NodeValor(valor, null);
-            cabeza = new NodeClave(clave, nodoValor, cabeza);
+            cabeza = new NodeClave(clave, new NodeValor(valor, null), cabeza);
         } else {
-            // Clave existente: agregar valor solo si no está repetido.
             if (!existeValor(nodoClave, valor)) {
                 nodoClave.setPrimero(new NodeValor(valor, nodoClave.getPrimero()));
             }
@@ -29,55 +24,32 @@ public class DiccionarioMultipleDinamico implements DiccionarioMultipleTDA {
     }
 
     @Override
-    public void EliminarValor(int clave, int valor) {
+    public void EliminarValor(String clave, String valor) {
         NodeClave nodoClave = buscarClave(clave);
         if (nodoClave == null) return;
 
         NodeValor curr = nodoClave.getPrimero();
         NodeValor prev = null;
-
-        while (curr != null && curr.getValor() != valor) {
+        while (curr != null && !curr.getValor().equals(valor)) {
             prev = curr;
             curr = curr.getNext();
         }
-
         if (curr != null) {
             if (prev == null) {
                 nodoClave.setPrimero(curr.getNext());
             } else {
                 prev.setNext(curr.getNext());
             }
-
-            // Si la clave quedó sin valores, se elimina también.
             if (nodoClave.getPrimero() == null) {
-                Eliminar(clave);
+                eliminarClave(clave);
             }
         }
     }
 
     @Override
-    public void Eliminar(int clave) {
-        NodeClave curr = cabeza;
-        NodeClave prev = null;
-
-        while (curr != null && curr.getClave() != clave) {
-            prev = curr;
-            curr = curr.getNext();
-        }
-
-        if (curr != null) {
-            if (prev == null) {
-                cabeza = curr.getNext();
-            } else {
-                prev.setNext(curr.getNext());
-            }
-        }
-    }
-
-    @Override
-    public int[] Recuperar(int clave) {
+    public String[] Recuperar(String clave) {
         NodeClave nodoClave = buscarClave(clave);
-        if (nodoClave == null) return new int[0];
+        if (nodoClave == null) return new String[0];
 
         int count = 0;
         NodeValor curr = nodoClave.getPrimero();
@@ -85,8 +57,7 @@ public class DiccionarioMultipleDinamico implements DiccionarioMultipleTDA {
             count++;
             curr = curr.getNext();
         }
-
-        int[] result = new int[count];
+        String[] result = new String[count];
         curr = nodoClave.getPrimero();
         for (int i = 0; i < count; i++) {
             result[i] = curr.getValor();
@@ -96,15 +67,14 @@ public class DiccionarioMultipleDinamico implements DiccionarioMultipleTDA {
     }
 
     @Override
-    public int[] Claves() {
+    public String[] Claves() {
         int count = 0;
         NodeClave curr = cabeza;
         while (curr != null) {
             count++;
             curr = curr.getNext();
         }
-
-        int[] result = new int[count];
+        String[] result = new String[count];
         curr = cabeza;
         for (int i = 0; i < count; i++) {
             result[i] = curr.getClave();
@@ -113,18 +83,34 @@ public class DiccionarioMultipleDinamico implements DiccionarioMultipleTDA {
         return result;
     }
 
-    private NodeClave buscarClave(int clave) {
+    private void eliminarClave(String clave) {
         NodeClave curr = cabeza;
-        while (curr != null && curr.getClave() != clave) {
+        NodeClave prev = null;
+        while (curr != null && !curr.getClave().equals(clave)) {
+            prev = curr;
+            curr = curr.getNext();
+        }
+        if (curr != null) {
+            if (prev == null) {
+                cabeza = curr.getNext();
+            } else {
+                prev.setNext(curr.getNext());
+            }
+        }
+    }
+
+    private NodeClave buscarClave(String clave) {
+        NodeClave curr = cabeza;
+        while (curr != null && !curr.getClave().equals(clave)) {
             curr = curr.getNext();
         }
         return curr;
     }
 
-    private boolean existeValor(NodeClave nodoClave, int valor) {
+    private boolean existeValor(NodeClave nodoClave, String valor) {
         NodeValor curr = nodoClave.getPrimero();
         while (curr != null) {
-            if (curr.getValor() == valor) return true;
+            if (curr.getValor().equals(valor)) return true;
             curr = curr.getNext();
         }
         return false;

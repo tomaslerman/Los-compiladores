@@ -2,19 +2,19 @@ package implementacion_dinamica;
 
 public class NodeValor {
 
-    private int valor;
+    private String valor;
     private NodeValor next;
 
-    public NodeValor(int valor, NodeValor next) {
+    public NodeValor(String valor, NodeValor next) {
         this.valor = valor;
         this.next = next;
     }
 
-    public int getValor() {
+    public String getValor() {
         return valor;
     }
 
-    public void setValor(int valor) {
+    public void setValor(String valor) {
         this.valor = valor;
     }
 

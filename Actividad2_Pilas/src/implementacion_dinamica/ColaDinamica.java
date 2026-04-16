@@ -1,6 +1,6 @@
 package implementacion_dinamica;
 
-import Interface.ColaTDA;
+import Interfaces.ColaTDA;
 
 public class ColaDinamica implements ColaTDA {
 

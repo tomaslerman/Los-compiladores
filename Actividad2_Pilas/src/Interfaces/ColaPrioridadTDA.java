@@ -2,11 +2,13 @@ package Interfaces;
 
 public interface ColaPrioridadTDA {
 
-    void InicializarCola();
+    void InicializarColaPrioridad();
 
     void AcolarPrioridad(int x, int prioridad);
 
     void Desacolar();
+
+    boolean ColaVacia();
 
     int Primero();
 

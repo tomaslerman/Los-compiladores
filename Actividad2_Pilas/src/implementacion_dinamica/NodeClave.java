@@ -2,21 +2,21 @@ package implementacion_dinamica;
 
 public class NodeClave {
 
-    private int clave;
+    private String clave;
     private NodeValor primero; // cabeza de la lista de valores para esta clave
     private NodeClave next;
 
-    public NodeClave(int clave, NodeValor primero, NodeClave next) {
+    public NodeClave(String clave, NodeValor primero, NodeClave next) {
         this.clave = clave;
         this.primero = primero;
         this.next = next;
     }
 
-    public int getClave() {
+    public String getClave() {
         return clave;
     }
 
-    public void setClave(int clave) {
+    public void setClave(String clave) {
         this.clave = clave;
     }
 

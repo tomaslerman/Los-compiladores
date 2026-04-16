@@ -13,6 +13,10 @@ public class DiccionarioMultiple implements DiccionarioMultipleTDA {
     private int cantidad;
 
     public DiccionarioMultiple() {
+    }
+
+    @Override
+    public void InicializarDiccionario() {
         claves = new String[MAX_CLAVES];
         valores = new String[MAX_CLAVES][MAX_VALORES];
         cantValores = new int[MAX_CLAVES];

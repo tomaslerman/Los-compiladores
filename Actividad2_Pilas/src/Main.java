@@ -185,7 +185,7 @@ public class Main {
         System.out.println("\nEjercicio 9:");
 
         ColaPrioridadTDA hospital = new ColaPrioridad();
-        hospital.InicializarCola();
+        hospital.InicializarColaPrioridad();
 
         hospital.AcolarPrioridad(1, 1); //nene
         hospital.AcolarPrioridad(2, 100); //jubilado
@@ -199,7 +199,7 @@ public class Main {
         System.out.println("\nEjercicio 10:");
 
         ColaPrioridadTDA examen = new ColaPrioridad();
-        examen.InicializarCola();
+        examen.InicializarColaPrioridad();
 
         examen.AcolarPrioridad(1, 5); //regular
         examen.AcolarPrioridad(2, 10); //promocionante
@@ -226,7 +226,7 @@ public class Main {
         System.out.println("\nEjercicio 12:");
 
         ColaPrioridadTDA cpu = new ColaPrioridad();
-        cpu.InicializarCola();
+        cpu.InicializarColaPrioridad();
 
         cpu.AcolarPrioridad(1, 10); //Spotify
         cpu.AcolarPrioridad(2, 50); //Proceso del sistema
@@ -240,7 +240,7 @@ public class Main {
         System.out.println("\nEjercicio 13:");
 
         ColaPrioridadTDA vuelo = new ColaPrioridad();
-        vuelo.InicializarCola();
+        vuelo.InicializarColaPrioridad();
 
         vuelo.AcolarPrioridad(1, 3); //Movilidad reducida
         vuelo.AcolarPrioridad(2, 1); //Normal
@@ -259,7 +259,7 @@ public class Main {
         System.out.println("\nEjercicio 14:");
 
         ColaPrioridadTDA soporte = new ColaPrioridad();
-        soporte.InicializarCola();
+        soporte.InicializarColaPrioridad();
 
         soporte.AcolarPrioridad(1, 0);
         soporte.AcolarPrioridad(2, 999);
@@ -274,6 +274,7 @@ public class Main {
         System.out.println("Ejercicio 1:");
 
         Conjunto Padron = new Conjunto();
+        Padron.InicializarConjunto();
         int[] votantes = {1,2,3,4,4,5,6};
 
         for (int votante : votantes) {
@@ -292,6 +293,7 @@ public class Main {
         // =========================
         System.out.println("Ejercicio 2:");
         Conjunto Lista = new Conjunto();
+        Lista.InicializarConjunto();
         int[] invitados = {1,2,2,3,4,5,6,7,8,9,9,10};
         for (int invitado : invitados) {
             Lista.Agregar(invitado);
@@ -308,6 +310,7 @@ public class Main {
         String[] palabrasClave = {"Crypto", "Ganá", "Premio", "Hola", "amigo", "ganaste"};
 
         Conjunto blacklist = new Conjunto();
+        blacklist.InicializarConjunto();
         blacklist.Agregar(0); // "Crypto"
         blacklist.Agregar(1); // "Ganá"
         blacklist.Agregar(2); // "Premio"
@@ -333,6 +336,7 @@ public class Main {
         System.out.println("\nEjercicio 4:");
 
         Conjunto tagsPost = new Conjunto();
+        tagsPost.InicializarConjunto();
         tagsPost.Agregar(0); // #Programacion
         tagsPost.Agregar(1); // #Java
         tagsPost.Agregar(2); // #OOP
@@ -350,6 +354,7 @@ public class Main {
         System.out.println("\nEjercicio 5:");
 
         Conjunto legajos = new Conjunto();
+        legajos.InicializarConjunto();
 
         int legajo = 12345;
         legajos.Agregar(legajo);
@@ -365,6 +370,7 @@ public class Main {
         System.out.println("\nEjercicio 6:");
 
         Conjunto conjEjemplo = new Conjunto();
+        conjEjemplo.InicializarConjunto();
         conjEjemplo.Agregar(10);
         conjEjemplo.Agregar(20);
         conjEjemplo.Agregar(30);
@@ -384,6 +390,7 @@ public class Main {
         System.out.println("\nEjercicio 7:");
 
         DiccionarioSimple agenda = new DiccionarioSimple();
+        agenda.InicializarDiccionario();
 
         String[] nombres = {"Juan", "María", "Pedro", "Ana", "Luis", "Laura", "Carlos", "Sofía", "Diego", "Elena"};
         int[] telefonos = {123456789, 987654321, 555555555, 111111111, 222222222, 333333333, 444444444, 666666666, 777777777, 888888888};
@@ -411,6 +418,7 @@ public class Main {
         };
 
         DiccionarioMultiple dicSinonimos = new DiccionarioMultiple();
+        dicSinonimos.InicializarDiccionario();
         for (int i = 0; i < palabras.length; i++) {
             for (String sinonimo : sinonimos[i]) {
                 dicSinonimos.Agregar(palabras[i], sinonimo);
@@ -430,6 +438,7 @@ public class Main {
         System.out.println("Modelado: Clave = [Nombre de usuario], Valor = [Puntaje máximo]");
 
         DiccionarioSimple torneo = new DiccionarioSimple();
+        torneo.InicializarDiccionario();
         torneo.Agregar("NinjaX", "9500");
         torneo.Agregar("ShadowByte", "8200");
         torneo.Agregar("PixelKiller", "11000");
@@ -450,6 +459,7 @@ public class Main {
         System.out.println("Asi que se eligió DiccionarioMultiple para guardar las traducciones.");
 
         DiccionarioMultiple traductor = new DiccionarioMultiple();
+        traductor.InicializarDiccionario();
         traductor.Agregar("Bank", "Banco");
         traductor.Agregar("Bank", "Orilla");
 
@@ -461,6 +471,7 @@ public class Main {
         System.out.println("\nEjercicio 11 - Índice de Libro:");
 
         DiccionarioMultiple indice = new DiccionarioMultiple();
+        indice.InicializarDiccionario();
         indice.Agregar("Recursión", "12");
         indice.Agregar("Recursión", "45");
         indice.Agregar("Recursión", "88");
@@ -473,6 +484,7 @@ public class Main {
         System.out.println("\nEjercicio 12 - Inscripción por Alumno:");
 
         DiccionarioMultiple inscripciones = new DiccionarioMultiple();
+        inscripciones.InicializarDiccionario();
         inscripciones.Agregar("12345", "Algoritmos");
         inscripciones.Agregar("12345", "Matemática");
         inscripciones.Agregar("12345", "Física");
@@ -485,6 +497,7 @@ public class Main {
         System.out.println("\nEjercicio 13 - DNS:");
 
         DiccionarioSimple dns = new DiccionarioSimple(); //Se usan diccionarios simples para asociar dominios a IPs únicas
+        dns.InicializarDiccionario();
         dns.Agregar("google.com", "142.250.190.46");
         dns.Agregar("github.com", "140.82.114.4");
 
@@ -497,6 +510,7 @@ public class Main {
         System.out.println("\nEjercicio 14 - Chipotle Support Bot (Pepper):");
 
         DiccionarioSimple pepper = new DiccionarioSimple(); //Se usan diccionarios simples para asociar Orden IDs a scripts Python unicos
+        pepper.InicializarDiccionario();
         pepper.Agregar("ORD-001", "taco.py");
         pepper.Agregar("ORD-002", "burrito.py");
         pepper.Agregar("ORD-003", "aguacate.py");

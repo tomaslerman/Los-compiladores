@@ -1,6 +1,6 @@
 package implementacion_dinamica;
 
-import Interface.ConjuntoTDA;
+import Interfaces.ConjuntoTDA;
 
 public class ConjuntoDinamico implements ConjuntoTDA {
 
@@ -58,5 +58,16 @@ public class ConjuntoDinamico implements ConjuntoTDA {
     @Override
     public int Elegir() {
         return cabeza.getData();
+    }
+
+    @Override
+    public int Tamanio() {
+        int count = 0;
+        Node curr = cabeza;
+        while (curr != null) {
+            count++;
+            curr = curr.getNext();
+        }
+        return count;
     }
 }

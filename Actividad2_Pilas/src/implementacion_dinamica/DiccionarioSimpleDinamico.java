@@ -1,10 +1,10 @@
 package implementacion_dinamica;
 
-import Interface.DiccionarioSimpleTDA;
+import Interfaces.DiccionarioSimpleTDA;
 
 public class DiccionarioSimpleDinamico implements DiccionarioSimpleTDA {
 
-    private Node cabeza; // lista enlazada de pares clave-valor
+    private NodeClave cabeza;
 
     @Override
     public void InicializarDiccionario() {
@@ -12,31 +12,26 @@ public class DiccionarioSimpleDinamico implements DiccionarioSimpleTDA {
     }
 
     @Override
-    public void Agregar(int clave, int valor) {
-        Node curr = cabeza;
-
-        // Si la clave ya existe, actualiza su valor.
-        while (curr != null && curr.getClave() != clave) {
+    public void Agregar(String clave, String valor) {
+        NodeClave curr = cabeza;
+        while (curr != null && !curr.getClave().equals(clave)) {
             curr = curr.getNext();
         }
-
         if (curr != null) {
-            curr.setValor(valor);
+            curr.getPrimero().setValor(valor);
         } else {
-            cabeza = new Node(clave, valor, cabeza);
+            cabeza = new NodeClave(clave, new NodeValor(valor, null), cabeza);
         }
     }
 
     @Override
-    public void Eliminar(int clave) {
-        Node curr = cabeza;
-        Node prev = null;
-
-        while (curr != null && curr.getClave() != clave) {
+    public void Eliminar(String clave) {
+        NodeClave curr = cabeza;
+        NodeClave prev = null;
+        while (curr != null && !curr.getClave().equals(clave)) {
             prev = curr;
             curr = curr.getNext();
         }
-
         if (curr != null) {
             if (prev == null) {
                 cabeza = curr.getNext();
@@ -47,15 +42,24 @@ public class DiccionarioSimpleDinamico implements DiccionarioSimpleTDA {
     }
 
     @Override
-    public int[] Claves() {
+    public String Recuperar(String clave) {
+        NodeClave curr = cabeza;
+        while (curr != null && !curr.getClave().equals(clave)) {
+            curr = curr.getNext();
+        }
+        if (curr == null) return null;
+        return curr.getPrimero().getValor();
+    }
+
+    @Override
+    public String[] Claves() {
         int count = 0;
-        Node curr = cabeza;
+        NodeClave curr = cabeza;
         while (curr != null) {
             count++;
             curr = curr.getNext();
         }
-
-        int[] result = new int[count];
+        String[] result = new String[count];
         curr = cabeza;
         for (int i = 0; i < count; i++) {
             result[i] = curr.getClave();

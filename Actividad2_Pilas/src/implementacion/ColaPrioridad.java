@@ -10,7 +10,7 @@ public class ColaPrioridad implements ColaPrioridadTDA {
 
     public static final int MAX = 100;
 
-    public void InicializarCola() {
+    public void InicializarColaPrioridad() {
         valores = new int[MAX];
         prioridades = new int[MAX];
         cantidad = 0;
@@ -48,6 +48,10 @@ public class ColaPrioridad implements ColaPrioridadTDA {
         }
 
         return prioridades[mejorPos];
+    }
+
+    public boolean ColaVacia() {
+        return cantidad == 0;
     }
 
     //Desacolar el elemento con mayor prioridad

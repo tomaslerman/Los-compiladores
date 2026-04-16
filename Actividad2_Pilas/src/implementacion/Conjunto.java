@@ -9,6 +9,10 @@ public class Conjunto implements ConjuntoTDA {
     private int cantidad;
 
     public Conjunto() {
+    }
+
+    @Override
+    public void InicializarConjunto() {
         datos = new int[MAX];
         cantidad = 0;
     }
